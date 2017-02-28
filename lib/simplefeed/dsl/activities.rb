@@ -25,7 +25,7 @@ module SimpleFeed
       # end
       # etc...
       SimpleFeed::Providers.define_provider_methods(self) do |instance, method, *args, **opts, &block|
-        if args&:first
+        if args&.first
           arg1 = args.shift
           if arg1.is_a?(SimpleFeed::Event)
             event = arg1
